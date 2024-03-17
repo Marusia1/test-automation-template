@@ -15,6 +15,15 @@ public class OrderDtoBuilderAndFactory {
     private String comment;
     private int id;
 
+    public OrderDtoBuilderAndFactory(String status, int courierId, String customerName, String customerPhone, String comment, int id) {
+        this.status = status;
+        this.courierId = courierId;
+        this.customerName = customerName;
+        this.customerPhone = customerPhone;
+        this.comment = comment;
+        this.id = id;
+    }
+
     public static OrderDtoBuilderAndFactory createRandomOrder() {
         // builder
         return OrderDtoBuilderAndFactory.builder()

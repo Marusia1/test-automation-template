@@ -58,5 +58,19 @@ public class ApiClient extends BaseSetupApi {
                 .extract()
                 .response();
     }
+//    public static Response createOrder(RequestSpecification spec, OrderDtoBuilderAndFactory orderDtoBuilderAndFactory){
+//
+//        return given()
+//                .spec(spec)
+//                .log()
+//                .all()
+//                .body("{\"status\": \"OPEN\", \"courierId\": 0, \"customerName\": \"Olga\", \"customerPhone\": \"111111\", \"comment\": \"new order\", \"id\": 1}")
+//                .post( "orders")
+//                .then()
+//                .log()
+//                .all()
+//                .extract()
+//                .response();
+//    }
 
 }

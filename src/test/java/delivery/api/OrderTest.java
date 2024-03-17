@@ -21,10 +21,12 @@ public class OrderTest extends BaseSetupApi {
         );
 
     }
+    // 14 homework. Test for new order creation
     @Test
     void createOrderAndCheckResponse() {
       // order creation (may use factory) -> replace new OrderDto???? correctly initialize new OrderDto
         Response response = ApiClient.createOrder(getAuthenticatedRequestSpecification(), new OrderDto() );
+
 
 
         Assertions.assertAll("Test description",
