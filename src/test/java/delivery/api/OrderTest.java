@@ -2,6 +2,7 @@ package delivery.api;
 
 import delivery.dto.OrderDto;
 import delivery.dto.OrderDtoBuilderAndFactory;
+import delivery.utils.RandomDataGenerator;
 import io.restassured.response.Response;
 import org.apache.http.HttpStatus;
 import org.junit.jupiter.api.Assertions;
@@ -25,7 +26,9 @@ public class OrderTest extends BaseSetupApi {
     @Test
     void createOrderAndCheckResponse() {
       // order creation (may use factory) -> replace new OrderDto???? correctly initialize new OrderDto
-        Response response = ApiClient.createOrder(getAuthenticatedRequestSpecification(), new OrderDto() );
+       Response response = ApiClient.createOrder(getAuthenticatedRequestSpecification(), new OrderDto() );
+       // Response response = ApiClient.createOrder(getAuthenticatedRequestSpecification(), new OrderDtoBuilderAndFactory() );
+
 
 
 
