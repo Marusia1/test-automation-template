@@ -55,8 +55,9 @@ mvn clean test -Dtest=TestClassName
 
 
 
-| No. | Query                                                                      | XPath of the query                           |
-|-----|----------------------------------------------------------------------------|----------------------------------------------|
-| 4.1 | Select all <td> elements containing names (Names)                          | //td[@class="td3"][not(contains(p, "Name"))] |
-| 4.2 | Select all <td> elements whose data-qa attributes begins with "amount-"    | //td//tr//p[starts-wit(., 'Amount')]         |
-| 4.3 | Select all <td> elements containing a <td> element with th text "John Doe" | //td[@class="td3"][not(contains(p, "Name"))] |
+| No. | Query                                                                   | XPath of the query                          |
+|-----|-------------------------------------------------------------------------|---------------------------------------------|
+| 4.1 | Select all <td> elements containing names (Names)                       | //td[@class="td3"][not(contains(p, 'Name')) |
+| 4.2 | Select all <td> elements whose data-qa attributes begins with "amount-" | //tr//td//p[starts-with(., 'Amount')]       |
+| 4.3 | Select all <td> elements with text "John Doe"                           | //tr//td[contains(., 'John Doe')            |
+
