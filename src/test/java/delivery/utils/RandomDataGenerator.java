@@ -10,4 +10,6 @@ public class RandomDataGenerator {
         String generatedCustomerName = RandomStringUtils.random(length, useLetters, useNumbers);
         return generatedCustomerName;
     }
+
+
 }

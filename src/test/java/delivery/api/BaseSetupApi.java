@@ -30,7 +30,6 @@ public class BaseSetupApi {
         String username = System.getProperty("username");
         String password = System.getProperty("password");
 
-
         // auth
         bearerToken = ApiClient.authorizeAndGetToken(username, password);
     }
