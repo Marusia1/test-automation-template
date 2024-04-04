@@ -18,14 +18,20 @@ To run a specific test class using Maven, execute the following command in the t
 mvn clean test -Dtest=TestClassName
 
 ```
-| No. | Element Title                            | Xpath                                      |
-|-----|------------------------------------------|--------------------------------------------|
-| 1   | Username input field - "Login" button    | //*[@id="username"]                        |
-| 2   | Password input field - "Password" button | //*[@id="password"]                        |
-| 3   | "Sign In" button                         | //*[@id="root"]/div/div[1]main/form/button |
-| 4   | Logo                                     | //*[@id="root"]/div/div[1]/div/div[1]/a    |
-| 5   | EN Language button                       | //*[@id="root"]/div/div[2]/div/button[1]   |
-| 6   | RU Language button                       | //*[@id="root"]/div/div[2]/div/button[2]   |
+| No. | Element Title                                            | Xpath                                                      |
+|-----|----------------------------------------------------------|------------------------------------------------------------|
+| 1   | Username input field - "Login" button                    | //*[@data-name="username-input"]                           |
+| 2   | Password input field - "Password" button                 | //*[@data-name="password-input"]                           |
+| 3   | "Sign In" button                                         | //*[@data-name="signIn-button"]                            |
+| 4   | Logo                                                     | //*[@data-name="mainPage-link"]                            |
+| 5   | EN Language button                                       | //button[text()='EN']                                      |
+| 6   | RU Language button                                       | //button[text()='RU']                                      |
+| 7   | Error message for incorrect credentials                  | //*[@data-name="authorizationError-popup-close-button"]    |
+| 8   | Error message for less than 2 characters in the username | //*[@data-name="username-input-error"] check the passw !!! |
+| 9   | Error message for less than 8 characters in the password | //*[@data-name="username-input-error"]                     |
+
+// Selectors for the error messages both for password and username input fields are the same !!!!!!
+
 
 
 | No. | Checklist for Tallinn Delivery Login page                                                                                                  | Result |
@@ -55,9 +61,20 @@ mvn clean test -Dtest=TestClassName
 
 
 
-| No. | Query                                                                   | XPath of the query                          |
-|-----|-------------------------------------------------------------------------|---------------------------------------------|
-| 4.1 | Select all <td> elements containing names (Names)                       | //td[@class="td3"][not(contains(p, 'Name')) |
-| 4.2 | Select all <td> elements whose data-qa attributes begins with "amount-" | //tr//td//p[starts-with(., 'Amount')]       |
-| 4.3 | Select all <td> elements with text "John Doe"                           | //tr//td[contains(., 'John Doe')            |
+
+| No.  | Query                                                                   | XPath                                        |
+|:-----|-------------------------------------------------------------------------|:---------------------------------------------|
+| 4.1  | Select all <td> elements containing names (Names)                       | //td[@class="td3"][not(contains(p, 'Name'))] |
+| 4.2  | Select all <td> elements whose data-qa attributes begins with "amount-" | //tr//td//p[starts-with(., 'Amount')]        |
+| 4.3  | Select all <td> elements with text "John Doe"                           | //tr//td[contains(., 'John Doe')]            |
+
+
+
+````
+
+| No.   | Query and  XPath                                                       |                                             |
+|-------|------------------------------------------------------------------------|---------------------------------------------|
+| 4.1   | Select all <td> elements containing names (Names)                      |//td[@class="td3"][not(contains(p, 'Name'))] |
+| 4.2   | Select all <td> elements whose data-qa attributes begins with "amount-"|//tr//td//p[starts-with(., 'Amount')]        |
+| 4.3   | Select all <td> elements with text "John Doe"                          |//tr//td[contains(., 'John Doe')]            |
 
