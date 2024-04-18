@@ -47,6 +47,8 @@ public class LoginPageTest {
 
     }
 
+    //18 Homework
+
     @Test
     public void loginWithCorrectDataCheckOrderPage() {
 
@@ -97,7 +99,24 @@ public class LoginPageTest {
         $x("//*[@data-name='username-input-error']").isEnabled();
 
     }
-}
+
+    @Test
+    public void signInButtonDisabledWithLessCharactersThanRequired() {
+        open("http://35.208.34.242:3000/signin");
+
+        $x("//*[@data-name=\"username-input\"]").sendKeys("m");
+
+        $x("//*[@data-name=\"password-input\"]").sendKeys("w");
+
+        //$x("//*[@data-name=\"password-input\"]").sendKeys(Keys.ENTER);
+
+        $x("//*[@data-name=\"signIn-button\"]").shouldBe(Condition.disabled);
+
+    }
+
+
+    }
+
 
 
 
